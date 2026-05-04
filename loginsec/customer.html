@@ -31,7 +31,7 @@
         <h2>Create Your Account</h2>
         <h4 style="color:rgb(130, 95, 49)">Registration as a Customer</h4>
         <br/>
-        <form onsubmit="saveData(event)">
+ <form>
 
     <div class="form-group">
         <input type="text" id="name" placeholder="Full Name" required>
@@ -57,15 +57,16 @@
         <input type="checkbox" required> I agree to Terms & Conditions
     </div>
 
-    <button type="submit" class="btn">Create Account</button>
+    <button type="button" onclick="saveData()" class="btn">
+     Create Account
+        </button>
 
 </form>
     </div>
 
 </div>
 <script>
-function saveData(e){
-    e.preventDefault();
+function saveData(){
 
     let name = document.getElementById("name").value;
     let mobile = document.getElementById("mobile").value;
@@ -84,6 +85,8 @@ function saveData(e){
     localStorage.setItem("password", password);
 
     alert("Registration Successful ✅");
+
+    // redirect
     window.location.href = "../customerportel/customerportal.html";
 }
 </script>
